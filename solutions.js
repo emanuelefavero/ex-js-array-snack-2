@@ -97,7 +97,7 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
       const data = await getBooks(IDS);
 
       // 🧪
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.error('Error:', error.message);
     }
@@ -106,7 +106,19 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 
 // SNACK 6 (Bonus)
 {
-  // TODO
+  const areThereAvailableBooks = books.some(b => b.available); // ✔︎
+
+  // NOTE: [...books].sort() would work as well
+  // ? `parseFloat` also supports floating-point numbers
+  const booksByPrice = books.toSorted(
+    (a, b) => parseFloat(a.price) - parseFloat(b.price),
+  ); // ✔︎
+
+  booksByPrice.sort((a, b) => b.available - a.available); // ✔︎
+
+  // 🧪
+  // console.log(areThereAvailableBooks);
+  // console.log(booksByPrice);
 }
 
 // SNACK 7 (Bonus)
