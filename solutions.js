@@ -61,7 +61,7 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 {
   const ages = books.map(b => b.author.age); // ✔︎
   const agesSum = ages.reduce((acc, curr) => acc + curr, 0); // ✔︎
-  console.log(agesSum / ages.length); // ✔︎
+  console.log('authors average age:', agesSum / ages.length); // ✔︎
 
   // 🧪
   // console.log(ages);
