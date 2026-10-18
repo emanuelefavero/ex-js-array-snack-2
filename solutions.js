@@ -74,12 +74,6 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
   const IDS = [2, 13, 7, 21, 19];
 
   // Utils
-  const buildUrl = (path, params) => {
-    const endpoint = [BASE_URL, ...path].join('/');
-    const query = new URLSearchParams(params).toString();
-    return query ? `${endpoint}?${query}` : endpoint;
-  };
-
   const fetchJson = async url => {
     const response = await fetch(url);
 
@@ -91,7 +85,11 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 
   // Solution
   const getBooks = async ids => {
-    // TODO
+    if (!Array.isArray(ids)) throw new Error('ids must be an array');
+
+    return Promise.all(
+      ids.map(id => fetchJson(`${BASE_URL}/${RESOURCE}/${id}`)),
+    );
   }; // ✔︎
 
   (async () => {
@@ -99,7 +97,7 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
       const data = await getBooks(IDS);
 
       // 🧪
-      // console.log(data);
+      console.log(data);
     } catch (error) {
       console.error('Error:', error.message);
     }
