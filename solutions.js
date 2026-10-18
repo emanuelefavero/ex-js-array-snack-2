@@ -2,13 +2,19 @@
 
 import { books } from './data/books.js';
 
-console.log('Uncomment the tests to verify the solutions');
+console.log('Uncomment the tests (🧪) to verify the solutions');
 
 // ---
 
 // SNACK 1
 {
-  // TODO
+  const longBooks = books.filter(b => b.pages > 300); // ✔︎
+  const longBooksTitles = longBooks.map(b => b.title); // ✔︎
+  longBooksTitles.forEach(t => console.log(t)); // ✔︎
+
+  // 🧪
+  // console.log(longBooks);
+  // console.log(longBooksTitles);
 }
 
 // SNACK 2
@@ -58,7 +64,7 @@ console.log('Uncomment the tests to verify the solutions');
     try {
       const data = await getBooks(IDS);
 
-      // Tests
+      // 🧪
       // console.log(data);
     } catch (error) {
       console.error('Error:', error.message);
