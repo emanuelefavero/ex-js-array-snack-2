@@ -19,7 +19,29 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 
 // SNACK 2
 {
-  // TODO
+  const DISCOUNT_RATE = 0.2;
+
+  const availableBooks = books.filter(b => b.available); // ✔︎
+
+  const discountedBooks = availableBooks.map(b => {
+    const price = parseFloat(b.price);
+    const discountedPrice = price * (1 - DISCOUNT_RATE);
+    const formattedPrice = `${discountedPrice.toFixed(2)}€`;
+
+    return {
+      ...b,
+      price: formattedPrice,
+    };
+  }); // ✔︎
+
+  const fullPricedBook = discountedBooks.find(b =>
+    Number.isInteger(parseFloat(b.price)),
+  ); // ✔︎
+
+  // 🧪
+  // console.log(availableBooks);
+  console.log(discountedBooks);
+  console.log(fullPricedBook);
 }
 
 // SNACK 3
