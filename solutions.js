@@ -4,8 +4,6 @@ import { books } from './data/books.js';
 
 console.log('Uncomment the tests (🧪) to verify the solutions');
 
-// ---
-
 // SNACK 1
 {
   const longBooks = books.filter(b => b.pages > 300); // ✔︎
