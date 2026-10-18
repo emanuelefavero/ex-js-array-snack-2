@@ -64,8 +64,8 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
   console.log(agesSum / ages.length); // ✔︎
 
   // 🧪
-  console.log(ages);
-  console.log(agesSum);
+  // console.log(ages);
+  // console.log(agesSum);
 }
 
 // SNACK 5 (Bonus)
