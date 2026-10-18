@@ -123,5 +123,14 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 
 // SNACK 7 (Bonus)
 {
-  // TODO
+  const tagCounts = books.reduce((acc, { tags }) => {
+    tags.forEach(t => {
+      acc[t] = (acc[t] ?? 0) + 1;
+    });
+
+    return acc;
+  }, {}); // ✔︎
+
+  // 🧪
+  // console.log(tagCounts);
 }
