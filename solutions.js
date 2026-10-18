@@ -40,13 +40,21 @@ console.log('Uncomment the tests (🧪) to verify the solutions');
 
   // 🧪
   // console.log(availableBooks);
-  console.log(discountedBooks);
-  console.log(fullPricedBook);
+  // console.log(discountedBooks);
+  // console.log(fullPricedBook);
 }
 
 // SNACK 3
 {
-  // TODO
+  const authors = books.map(b => b.author); // ✔︎
+  const areAuthorsAdults = authors.every(a => a.age >= 18); // ✔︎
+  authors.sort((a, b) => {
+    return areAuthorsAdults ? a.age - b.age : b.age - a.age;
+  }); // ✔︎
+
+  // 🧪
+  // console.log(authors);
+  // console.log(areAuthorsAdults);
 }
 
 // SNACK 4
